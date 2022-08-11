@@ -108,7 +108,7 @@
 let countEl = document.getElementById("count-el");
 let count = 0;
 function increment(){
-    count += 1
+    count += 1;
     
     countEl.innerText = count;
 }
@@ -117,8 +117,19 @@ function increment(){
 
 
 // 1. Create a function, save(), which logs out the count when it's called
+// 1. Grab the save-el paragrah and store it in a variable called saveEl
+
+let saveEl = document.getElementById("save-el")
 
 function save(){
-    console.log(count)
+
+    //Create a variable that contains both the count and the dash separator, i.e. "12 - "
+    let countDash = count + " - " ;
+
+    // 3. Render the variable in the saveEl using innerText
+    saveEl.textContent += countDash; // NB: Make sure to not delete the existing content of the paragraph
+
+    countEl.innerText = 0;//sets innertext back to zero
+    count = 0;
 }
 // save()
